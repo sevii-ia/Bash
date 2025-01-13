@@ -1,0 +1,39 @@
+#! /bin/bash
+
+create_user() {
+	read -p "enter name user: " username
+	if id "$username" &>/dev/null; then
+		echo "user $username is found"
+	else
+		sudo useradd "$username"
+		sudo passwd "$username"
+	fi
+}
+
+remove_user() {
+	read -p "enter name user: " username
+	if id "$username" &>/dev/null; then
+		sudo deluser -r "$username"
+		echo "user $username remove"
+	else
+		echo "user $username not found"
+	fi
+}
+
+change_password() {
+	read -p "enter name user: " username
+	if id "$username" &>/dev/null then
+		sudo passwd "$username"
+		echo "user $username password change"
+	else
+		echo "user $username not found"
+	fi
+
+check_user() {
+	read -p "enter name user: " username
+	if id "$username" &>/dev/null; then
+		echo "user $username isnue"
+	else
+		echo "user $username not found"
+	fi
+}
