@@ -74,13 +74,13 @@ if ($EnableArchive -eq $true) {
 }
 
 # --- Видалення старих резервних копій ---
-Add-Content -Path $LogFile -Value "Очищення старих резервів (старше $KeepDays днів)..."
-Get-ChildItem -Path $BackupDir -Include *.dt, *.zip -File | 
-    Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-$KeepDays) } |
-    ForEach-Object {
-        Remove-Item $_.FullName -Force
-        Add-Content -Path $LogFile -Value "Видалено старий файл: $($_.Name)"
-    }
+#Add-Content -Path $LogFile -Value "Очищення старих резервів (старше $KeepDays днів)..."
+#Get-ChildItem -Path $BackupDir -Include *.dt, *.zip -File | 
+#    Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-$KeepDays) } |
+#    ForEach-Object {
+#        Remove-Item $_.FullName -Force
+#        Add-Content -Path $LogFile -Value "Видалено старий файл: $($_.Name)"
+#    }
 
 # --- Завершення ---
 $LogFooter = "==== $(Get-Date -Format 'dd.MM.yyyy HH:mm:ss') - Резервне копіювання завершено успішно ===="
