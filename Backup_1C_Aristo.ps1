@@ -1,3 +1,5 @@
+# Команда для запуску: powershell -ExecutionPolicy Bypass -File "D:\Scripts\Backup_1C.ps1"
+
 # --- ПАРАМЕТРИ, ЯКІ МОЖНА ЗМІНЮВАТИ ---
 $OneCExePath      = "C:\Program Files\BAF\8.3.18.1627\bin\1cv8.exe"  # шлях до 1cv8.exe
 $BasePath         = "D:\1C\Aristo"                                   # шлях до файлової бази
